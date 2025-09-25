@@ -1,5 +1,5 @@
-  // Función para mostrar el contenido correspondiente
-  document.querySelectorAll('.sidebar a').forEach(anchor => {
+   // Función para mostrar el contenido correspondiente
+   document.querySelectorAll('.sidebar a').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
         // Ocultar todos los pasos
