@@ -1,8 +1,9 @@
 const usuario = "daniinigogarcia98";
 const repositorio = "daniinigogarcia98.github.io";
 
-async function obtenerUltimaActualizacion() {
-  const elemento = document.getElementById("fecha-actualizacion");
+async function obtenerDatosRepositorio() {
+  const elementoFecha = document.getElementById("fecha-actualizacion");
+  const elementoRepositorio = document.getElementById("nombre-repositorio");
 
   try {
     const url = `https://api.github.com/repos/${usuario}/${repositorio}`;
@@ -21,6 +22,12 @@ async function obtenerUltimaActualizacion() {
 
     console.log("Datos de GitHub:", datos);
 
+    // Mostrar nombre del repositorio
+    if (elementoRepositorio) {
+      elementoRepositorio.textContent = datos.name;
+    }
+
+    // Comprobar fecha
     if (!datos.pushed_at) {
       throw new Error("GitHub no devolvió pushed_at");
     }
@@ -33,15 +40,21 @@ async function obtenerUltimaActualizacion() {
       day: "numeric"
     });
 
-    elemento.textContent = fechaFormateada;
+    if (elementoFecha) {
+      elementoFecha.textContent = fechaFormateada;
+    }
 
   } catch (error) {
-    console.error("Error al obtener la fecha de GitHub:", error);
+    console.error("Error al obtener los datos de GitHub:", error);
 
-    if (elemento) {
-      elemento.textContent = "No disponible";
+    if (elementoFecha) {
+      elementoFecha.textContent = "No disponible";
+    }
+
+    if (elementoRepositorio) {
+      elementoRepositorio.textContent = "No disponible";
     }
   }
 }
 
-document.addEventListener("DOMContentLoaded", obtenerUltimaActualizacion);
+document.addEventListener("DOMContentLoaded", obtenerDatosRepositorio);
