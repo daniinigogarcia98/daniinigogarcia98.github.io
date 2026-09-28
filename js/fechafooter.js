@@ -1,6 +1,6 @@
 // Reemplaza con tu usuario y el nombre de tu repositorio de GitHub
 const usuario = "daniinigogarcia98";
-const repositorio = "daniinigogarcia98.github.io";
+const repositorio = "https://github.com/daniinigogarcia98/daniinigogarcia98.github.io.git";
 
 async function obtenerUltimaActualizacion() {
   try {
