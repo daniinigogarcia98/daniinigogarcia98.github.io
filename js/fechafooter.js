@@ -4,7 +4,7 @@ const repositorio = "daniinigogarcia98.github.io";
 
 async function obtenerUltimaActualizacion() {
   try {
-    const respuesta = await fetch(`https://github.com/daniinigogarcia98/daniinigogarcia98.github.io.git`);
+    const respuesta = await fetch(`https://github.com{usuario}/${repositorio}`);
     
     if (respuesta.ok) {
       const datos = await respuesta.json();
