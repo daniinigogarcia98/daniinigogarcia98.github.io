@@ -1,10 +1,10 @@
 // Reemplaza con tu usuario y el nombre de tu repositorio de GitHub
-const usuario = "TU_USUARIO_DE_GITHUB";
-const repositorio = "NOMBRE_DE_TU_REPOSITORIO";
+const usuario = "daniinigogarcia98";
+const repositorio = "daniinigogarcia98.github.io";
 
 async function obtenerUltimaActualizacion() {
   try {
-    const respuesta = await fetch(`https://github.com{usuario}/${repositorio}`);
+    const respuesta = await fetch(`https://github.com/daniinigogarcia98/daniinigogarcia98.github.io.git`);
     
     if (respuesta.ok) {
       const datos = await respuesta.json();
